@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	color: inherit;
+}
+
+:root {
+	--secondary-color: rgba(215, 215, 215, 0.542);
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background-image: linear-gradient(
+		90deg,
+		rgb(15, 18, 29) 0%,
+		rgb(0, 0, 0) 35%,
+		rgb(67, 55, 62) 100%
+	);
+	padding: 2rem;
+	height: 100vh;
+	width: 100vw;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* HEADER */
+
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+header > img {
+	width: 20px;
+	height: 20px;
+}
+
+header > nav > ul {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100vmin;
+}
+
+/* MAIN */
+
+main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.page-number {
+	margin-right: 3rem;
+	font-size: 1.5vmin;
+	border-radius: 50%;
+	padding: 0.5rem;
+	margin-left: -0.3rem;
+	border: 1px solid var(--secondary-color);
+}
+
+.main-content {
+	width: 80%;
+}
+
+.page-counter {
+	max-width: 0.5rem;
+	text-align: center;
+	margin-right: 2%;
+	font-size: 1.5vmin;
+}
+
+/* MAIN CONTENT */
+/* HOME PAGE */
+#home-page {
+	display: flex; /*NONE or FLEX*/
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 30vh;
+}
+
+#home-page > h3 {
+	font-size: 1.5vmin;
+}
+
+#home-page > h2 {
+	font-size: 8vmin;
+}
+
+#home-page > p {
+	color: var(--secondary-color);
+	letter-spacing: 0.2vmin;
+	line-height: 3vmin;
+	font-size: 1.5vmin;
+	max-width: 70%;
+}
+
+/* ABOUT ME PAGE */
+#about-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	height: 75vmin;
+}
+
+#about-page > h2 {
+	font-size: 8vmin;
+	margin-top: 2vmin;
+}
+
+#about-page > h5 {
+	margin-top: 2vmin;
+	font-size: 1.5vmin;
+	margin-bottom: 8vmin;
+	color: var(--secondary-color);
+	letter-spacing: 0.2vmin;
+	line-height: 3vmin;
+	font-size: 1.5vmin;
+}
+/* DYNAMIC CONTENT */
+#about-page-content {
+	display: flex;
+	justify-content: space-around;
+}
+/* LEST SIDE */
+#about-page-content > ul {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 3vmin;
+	padding-right: 5vmin;
+}
+#about-page-content > ul {
+	font-size: 1.8vmin;
+	color: var(--secondary-color);
+	cursor: pointer;
+}
+#about-page-content > ul > li:hover {
+	font-size: 1.8vmin;
+	color: white;
+	text-decoration: underline;
+}
+
+/* RIGHT SIDE */
+#content-about-1,
+#content-about-2,
+#content-about-3 {
+	width: 70%;
+}
+#content-about-1 > h5,
+p,
+#content-about-2 > h5,
+p,
+#content-about-3 > h5,
+p {
+	color: var(--secondary-color);
+	letter-spacing: 0.2vmin;
+	line-height: 3vmin;
+	font-size: 1.5vmin;
+}
+
+/* CONTENT CONTROL */
+#content-about-1 {
+	/* display: none; */
+}
+#content-about-2 {
+	display: none;
+}
+#content-about-3 {
+	display: none;
+}
+
+/* FOOTER */
+
+.social {
+	font-size: 2vmin;
+	color: var(--secondary-color);
+	width: 20%;
+	display: flex;
+	justify-content: space-between;
+	gap: 3vmin;
+}
+
+footer > a {
+	position: absolute;
+	right: 2rem;
+	bottom: 1.5rem;
+}
+footer > a > img {
+	width: 3vmin;
+}
+
+/* VERTICAL LINES */
+.vl {
+	border-left: 1px solid var(--secondary-color);
+	height: 100px;
+	position: absolute;
+	left: 2rem;
+	margin-left: 0.5rem;
+	top: 25%;
+}
+.vl2 {
+	border-left: 1px solid var(--secondary-color);
+	height: 100px;
+	position: absolute;
+	left: 2rem;
+	margin-left: 0.5rem;
+	bottom: 25%;
+}
+
+/* RIGHT SCROLL LINES */
+.vl3 {
+	border-left: 1px solid var(--secondary-color);
+	height: 32vh;
+	position: absolute;
+	right: 2rem;
+	margin-left: 0.8rem;
+	top: 34%;
+}
+
+.vl4 {
+	border-left: 1px solid rgba(215, 215, 215, 0.542);
+	height: 8vh;
+	position: absolute;
+	right: 2rem;
+	margin-left: 0.8rem;
+	top: 34%;
+}
+
+/* MAIN CONTENT CONTROL */
+#home-page {
+	display: none;
+}
+
+#about-page {
+	/* display: none; */
+}
+
+#contact-page {
+	display: none;
+}
+
+#portfolio-page {
+	display: none;
+}
