@@ -239,11 +239,11 @@ footer > a > img {
 
 /* MAIN CONTENT CONTROL */
 #home-page {
-	display: none;
+	/* display: none; */
 }
 
 #about-page {
-	/* display: none; */
+	display: none;
 }
 
 #contact-page {
