@@ -32,8 +32,9 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 }
-
-/* HEADER */
+/* ################### */
+/* ###### HEADER ##### */
+/* ################### */
 
 header {
 	display: flex;
@@ -43,14 +44,19 @@ header {
 header > img {
 	width: 20px;
 	height: 20px;
+	cursor: pointer;
 }
 
 header > nav > ul {
 	display: flex;
 	justify-content: space-evenly;
 	width: 100vmin;
+	color: var(--secondary-color);
 }
 
+header > nav > ul li:hover {
+	color: white;
+}
 /* MAIN */
 
 main {
@@ -78,8 +84,10 @@ main {
 	margin-right: 2%;
 	font-size: 1.5vmin;
 }
+/* ################### */
+/* ### MAIN CONTENT ## */
+/* ################### */
 
-/* MAIN CONTENT */
 /* HOME PAGE */
 #home-page {
 	display: flex; /*NONE or FLEX*/
@@ -103,8 +111,10 @@ main {
 	font-size: 1.5vmin;
 	max-width: 70%;
 }
+/* ################### */
+/* ## ABOUT ME PAGE ## */
+/* ################### */
 
-/* ABOUT ME PAGE */
 #about-page {
 	display: flex;
 	flex-direction: column;
@@ -129,10 +139,10 @@ main {
 }
 /* DYNAMIC CONTENT */
 #about-page-content {
-	display: flex;
-	justify-content: space-around;
+	display: grid;
+	grid-template-columns: 30% 1fr;
 }
-/* LEST SIDE */
+/* LEFT SIDE */
 #about-page-content > ul {
 	display: flex;
 	flex-direction: column;
@@ -161,17 +171,41 @@ main {
 p,
 #content-about-2 > h5,
 p,
-#content-about-3 > h5,
-p {
+#content-about-3 > ul {
 	color: var(--secondary-color);
 	letter-spacing: 0.2vmin;
 	line-height: 3vmin;
 	font-size: 1.5vmin;
 }
 
+/* CONTENT */
+#content-about-1,
+#content-about-2,
+#content-about-3 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 150%;
+	margin-top: -1rem;
+}
+
+#content-about-3 > ul {
+	display: flex;
+	justify-content: space-around;
+}
+
+#content-about-3 > ul li {
+	display: inline;
+	padding: 0.7rem;
+	background-color: var(--secondary-color);
+}
+
+#content-about-3 > ul li img {
+	width: 5vh;
+}
 /* CONTENT CONTROL */
 #content-about-1 {
-	/* display: none; */
+	display: flex; /* display: none; */
 }
 #content-about-2 {
 	display: none;
@@ -180,7 +214,123 @@ p {
 	display: none;
 }
 
-/* FOOTER */
+/* ################### */
+/* ### CONTACT PAGE ## */
+/* ################### */
+#contact-page {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	justify-content: space-between;
+}
+#contact-page h2 {
+	font-size: 7vmin;
+	font-weight: 300;
+}
+#contact-page h5 {
+	font-size: 1.5vmin;
+	margin-bottom: auto;
+	color: var(--secondary-color);
+	letter-spacing: 0.2vmin;
+	line-height: 3vmin;
+}
+
+#contact-page a {
+	font-size: 6vmin;
+	font-weight: 300;
+	color: white;
+}
+
+#contact-page a:hover {
+	text-decoration: underline;
+}
+
+#contact-page > p:hover {
+	color: white;
+	cursor: pointer;
+}
+
+/* ################### */
+/* ## PORTFOLIO PAGE # */
+/* ################### */
+
+#portfolio-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 75vmin;
+}
+
+#portfolio-page > h2 {
+	font-size: 8vmin;
+	margin-top: 2vmin;
+}
+
+#portfolio-page > h5 {
+	font-size: 1.5vmin;
+	margin-top: -5vmin;
+	color: var(--secondary-color);
+	letter-spacing: 0.2vmin;
+	line-height: 3vmin;
+}
+#portfolio-page > a {
+	font-size: 1.5vmin;
+	color: var(--secondary-color);
+	margin-top: -1rem;
+}
+
+#portfolio-projects {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.portfolio-card {
+	width: 100vmin;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #111;
+	border-radius: 0.5rem;
+	padding-left: 1rem;
+	opacity: 0.7;
+}
+
+.portfolio-card:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.portfolio-card > h5 {
+	font-size: 1.5vmin;
+	border-radius: 50%;
+	padding: 0.5rem;
+	margin-left: -0.3rem;
+}
+
+.portfolio-card-content {
+	margin-right: auto;
+	padding: 0.5rem;
+}
+
+.portfolio-card-content > h3 {
+	font-size: 2.5vmin;
+}
+
+.portfolio-card-content > p {
+	font-size: 1.5vmin;
+}
+
+.portfolio-card > img {
+	width: 50%;
+	align-self: flex-end;
+}
+
+/* ################### */
+/* ###### FOOTER ##### */
+/* ################### */
 
 .social {
 	font-size: 2vmin;
@@ -191,14 +341,22 @@ p {
 	gap: 3vmin;
 }
 
+.social > a:hover {
+	color: white;
+}
+
 footer > a {
 	position: absolute;
 	right: 2rem;
 	bottom: 1.5rem;
 }
+
 footer > a > img {
 	width: 3vmin;
 }
+/* ################### */
+/* #### DECORATION ### */
+/* ################### */
 
 /* VERTICAL LINES */
 .vl {
@@ -237,9 +395,11 @@ footer > a > img {
 	top: 34%;
 }
 
+/* #################### */
 /* MAIN CONTENT CONTROL */
+/* #################### */
 #home-page {
-	/* display: none; */
+	display: flex; /* display:none */
 }
 
 #about-page {

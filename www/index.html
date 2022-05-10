@@ -4,18 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+        <link rel="manifest" href="./site.webmanifest">
 		<title>Ivan Espinoza Portfolio</title>
 		<link rel="stylesheet" href="./assets/css/stylesheet.css" />
 	</head>
 	<body>
 		<header>
-			<img src="./assets/img/logo.png" alt="logo" />
+			<img src="./assets/img/logo.png" alt="logo" onclick="goHome()" />
 			<nav class="menu">
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Get in touch</a></li>
+                    <li><a href="#" onclick="goHome()">Home</a></li>
+                    <li><a href="#" onclick="goAbout()">About me</a></li>
+                    <li><a href="#" onclick="goContact()">Get in touch</a></li>
+                    <li><a href="#" onclick="goPortfolio()">Portfolio</a></li>
                 </ul>
 			</nav>
 		</header>
@@ -28,7 +32,7 @@
 			<section class="main-content">
                 <div id="home-page">
                     <h3>introduction</h3>
-                    <h2>Website Under Live Construction.</h1>
+                    <h2>Web Developer.</h1>
                     <p>
                         Hi, im Ivan Espinoza. A passionate Developer and Engineer based in
                         Madrid focused on actively learning
@@ -39,29 +43,32 @@
                     <h5>Learn more about me</h5>
                     <div id="about-page-content">
                         <ul>
-                            <li id="about-01">/01  &nbsp; &nbsp; &nbsp; &nbsp;About me</li>
-                            <li id="about-02">/02  &nbsp; &nbsp; &nbsp; &nbsp;How I Work</li>
-                            <li id="about-03">/03  &nbsp; &nbsp; &nbsp; &nbsp;Skills</li>
+                            <li id="about-01" onclick="goContent1()">/01  &nbsp; &nbsp; &nbsp; &nbsp;About me</li>
+                            <li id="about-02" onclick="goContent2()">/02  &nbsp; &nbsp; &nbsp; &nbsp;How I Work</li>
+                            <li id="about-03" onclick="goContent3()">/03  &nbsp; &nbsp; &nbsp; &nbsp;Skills</li>
                         </ul>
-                        <div id="content-about-1">
+                        <div id="content-about-1" >
                             <h3>Edgar Ivan Espinoza</h3>
                             <h5>Web Developer</h5>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quam facilis dolore quibusdam perspiciatis nesciunt praesentium aliquid dolor eaque veniam?</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, vel. Dolorem ipsam perspiciatis sint laudantium illo fugiat, earum tempora aliquam nihil neque nemo commodi nam beatae, consequatur placeat iure porro aut mollitia eos dolor nobis?</p>
+                            <p>Im from Caracas Venezuela living in Madrid Spain. Im have an Eletronics Engineer degree, wich makes me real proud. But my real passion is coding. I have developed many many things, like little robots with Arduino and C, several website from scratch and many other in Wordpress.</p>
+                            <p>Also im an Audio Engineer with many years of experience in producing events and concert (maybe like more than 1000, and yeah! thats a lot). That my artistic side of my life that im also very proud.</p>
                         </div>
                         <div id="content-about-2">
                             <h3>Best Practice</h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, dolore earum nulla quia accusantium est ratione commodi. Consequatur libero est dignissimos doloremque, animi quos, accusamus tempore adipisci tenetur corrupti temporibus quasi dolor, ab eius cupiditate consectetur aperiam recusandae error nam!</p>
+                            <p>I really enjoy to read something thats understandable and easy to read. Thats why im really focused on making something thats at least understandable for many people.</p>
+                            <p>My way to think is that when something is very well documented its really easy to delegate and continue developing and evolving a product. </p>
                         </div>
                         <div id="content-about-3">
                             <h3>Skills</h3>
+                            <p>I have many years in developing, but now is the time thats actually i can make a life of it. So i have listed some very simple Languages wich i know im very practical.</p>
+                            <p>Most of them come from online course, but others comes from bootcamps too. I think that im really passionate about learning, so heres is a beautiful list made in CSS Flex for you.</p>
                             <ul>
-                                <li>HTML 5</li>
-                                <li>CSS 3</li>
-                                <li>JavaScript</li>
-                                <li>Node.js</li>
-                                <li>Python</li>
-                                <li>Github</li>
+                                <li><img src="./assets/img/html-5.png" alt="HTML 5"> </li>
+                                <li><img src="./assets/img/css-3.png" alt="CSS 3"></li>
+                                <li><img src="./assets/img/js.png" alt="JavaScript"></li>
+                                <li><img src="./assets/img/node.png" alt="Node.js"></li>
+                                <li><img src="./assets/img/python.png" alt="Python"></li>
+                                <li><img src="./assets/img/git.png" alt="Git"></li>
                             </ul>
                         </div>
                     </div>
@@ -69,33 +76,39 @@
                 <div id="contact-page">
                     <h2>Get in Touch</h2>
                     <h5>Got a project you would like to talk about?</h5>
-                    <p>edgarivanespinoza@gmail.com</p>
-                    <ul>follow me</ul>
+                    <a href="mailto:edgarivanespinoza@gmail.com">edgarivanespinoza@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/edgarivanespinoza/"><p>Edgar Ivan Espinoza LinkedIn</p></a>
                 </div>
                 <div id="portfolio-page">
                     <h2>Portfolio</h2>
                     <h5>Showcasing my recent projects</h5>
                     <div id="portfolio-projects">
-                        <div class="protfolio-card">
+                        <div class="portfolio-card" onClick="parent.open('https://www.edgarivanespinoza.com/urgent-fly')">
                             <h5>01</h5>
-                            <h3>Search Flight API</h3>
-                            <p>Fetch API example</p>
-                            <img src="" alt="project-screenshot1">
+                            <div class="portfolio-card-content">
+                                <h3>Search Flight API</h3>
+                                <p>Fetch API example</p>
+                            </div>
+                            <img src="./assets/img/urgent-fly.png" alt="project-screenshot1">
                         </div>
-                        <div class="protfolio-card">
+                        <div class="portfolio-card" onClick="parent.open('http://santillana.com.ve/quedivertidoesaprender/')">
                             <h5>02</h5>
-                            <h3>Unity APP for iOS and Android</h3>
-                            <p>Website and app for Santillana and McDonalds</p>
-                            <img src="" alt="project-screenshot2">
+                            <div class="portfolio-card-content">
+                                <h3>Unity APP for iOS and Android</h3>
+                                <p>Website and app for Santillana and McDonalds</p>
+                            </div>
+                            <img src="./assets/img/santillana.png" alt="project-screenshot2">
                         </div>
-                        <div class="protfolio-card">
+                        <div class="portfolio-card" onClick="parent.open('https://https://replit.com/@IvanEspinoza1/boilerplate-project-urlshortener#.replit')">
                             <h5>03</h5>
-                            <h3>URL Shortener Microservice</h3>
-                            <p>URL Shoretener microservise with Node.js and Express</p>
-                            <img src="" alt="project-screenshot3">
+                            <div class="portfolio-card-content">
+                                <h3>URL Shortener Microservice</h3>
+                                <p>URL Shoretener microservise with Node.js and Express</p>
+                            </div>
+                            <img src="./assets/img/urlshortener.png" alt="project-screenshot3">
                         </div>
                     </div>
-                    <a href="https://replit.com/@IvanEspinoza1" target="_blank" rel="noopener noreferrer">SEE MORE WORKS</a>
+                    <a href="https://replit.com/@IvanEspinoza1" target="_blank" rel="noopener noreferrer">SEE MORE WORKS ➡</a>
                 </div>
 			</section>
 			<section class="page-counter">
@@ -110,7 +123,6 @@
                 <a href="https://github.com/edgarivanespinoza">Github</a>
                 <a href="http://www.instagram.com/ivanespinozasound">Instagram</a>
             </div>
-            <a href="#"><img src="./assets/img/arrow.png" alt=""></a>
 		</footer>
 	</body>
 	<script src="./assets/js/script.js"></script>
