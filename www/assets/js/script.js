@@ -51,3 +51,11 @@ function goContent3() {
 	document.getElementById('content-about-2').style.display = 'none';
 	document.getElementById('content-about-3').style.display = 'flex';
 }
+function menu() {
+	let menu = document.getElementsByClassName('menu')[0];
+	if (menu.style.top < '0') {
+		menu.style.top = '10%';
+	} else {
+		menu.style.top = '-150px';
+	}
+}
