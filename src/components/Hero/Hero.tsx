@@ -16,7 +16,12 @@ export const Hero = () => {
           </h1>
           <Button
             color="primary"
-            href="https://www.linkedin.com/in/edgarivanespinoza/"
+            onClick={() => {
+              window.open(
+                'https://www.linkedin.com/in/edgarivanespinoza/',
+                '_blank'
+              );
+            }}
           >
             Estoy en <b>LinkedIn</b>
           </Button>
