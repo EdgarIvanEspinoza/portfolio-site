@@ -6,23 +6,18 @@ export const Header = () => {
     <Navbar>
       <NavbarContent className="hidden sm:flex gap-4 m-auto" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Experiencia
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link color="foreground" href="#">
-            Proyectos
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="#hero">
             Sobre mí
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Contacto
+          <Link color="foreground" href="#projects">
+            Proyectos
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#experiences">
+            Experiencia
           </Link>
         </NavbarItem>
       </NavbarContent>

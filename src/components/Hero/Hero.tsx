@@ -6,17 +6,18 @@ export const Hero = () => {
       isFooterBlurred
       className="border-none max-w-5xl m-auto px-32 py-16 mt-10 mb-10"
       radius="lg"
+      id="hero"
     >
       <div className="flex items-center justify-center p-10 gap-5">
-        <Avatar
-          className="w-20 h-20 text-large"
-          src="https://i.pravatar.cc/150?u=a04258114e29026302d"
-        />
+        <Avatar className="w-20 h-20 text-large" src="/assets/profile.jpg" />
         <div className="flex flex-col items-start justify-center p-10 gap-5">
           <h1 className="text-xl font-bold text-center text-gray-900 dark:text-gray-100">
             ¡Hola! Soy Edgar Iván Espinoza
           </h1>
-          <Button color="primary">
+          <Button
+            color="primary"
+            href="https://www.linkedin.com/in/edgarivanespinoza/"
+          >
             Estoy en <b>LinkedIn</b>
           </Button>
         </div>
