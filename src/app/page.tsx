@@ -8,7 +8,10 @@ import { Projects } from '@/components/Projects/Projects';
 
 export default function Home() {
   return (
-    <div className=" bg-gradient-to-r from-secondary-200 to-primary-100">
+    <div
+      className=" bg-gradient-to-r from-secondary-200 to-primary-100"
+      id="hero"
+    >
       <Header />
       <Hero />
       <Projects />

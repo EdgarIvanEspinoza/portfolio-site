@@ -46,26 +46,26 @@ export const Experiences = () => {
         >
           <p>
             Actualmente formo parte del equipo de Facephi como
-            <strong>Senior Frontend Developer</strong>, donde me encargo del
+            <strong> Senior Frontend Developer</strong>, donde me encargo del
             desarrollo y mantenimiento de aplicaciones web escalables utilizando
             tecnologías de vanguardia como
-            <strong>React</strong>, <strong>Next.js</strong>,
-            <strong>TypeScript</strong> y <strong>Panda CSS</strong>.
+            <strong> React</strong>, <strong>Next.js</strong>,
+            <strong> TypeScript</strong> y <strong>Panda CSS</strong>.
           </p>
           <p>
             Mi trabajo consiste en colaborar en la migración de sistemas
             heredados hacia arquitecturas modernas, implementando soluciones que
             optimizan el rendimiento mediante técnicas como
-            <em>Server-Side Rendering (SSR)</em>,
-            <em>Incremental Static Regeneration (ISR)</em>, caching y lazy
+            <em> Server-Side Rendering (SSR)</em>,
+            <em> Incremental Static Regeneration (ISR)</em>, caching y lazy
             loading. Esto ha permitido mejorar significativamente la velocidad y
             la experiencia del usuario en nuestras plataformas.
           </p>
           <p>
             Además, participo en la integración de APIs a través de
-            <strong>REST</strong> y <strong>GraphQL</strong>, y en el desarrollo
-            de librerías de componentes reutilizables, adoptando un enfoque
-            modular en entornos monorepo.
+            <strong> REST</strong> y <strong>GraphQL</strong>, y en el
+            desarrollo de librerías de componentes reutilizables, adoptando un
+            enfoque modular en entornos monorepo.
           </p>
           <div
             style={{
@@ -113,8 +113,8 @@ export const Experiences = () => {
           </p>
           <p>
             Adicionalmente, he integrado herramientas complementarias como
-            <strong>Styled Components</strong> para la gestión de estilos y
-            <strong>Storybook</strong> para el desarrollo y documentación
+            <strong> Styled Components</strong> para la gestión de estilos y
+            <strong> Storybook</strong> para el desarrollo y documentación
             eficiente de componentes. Siguiendo la metodología Agile Scrum,
             colaboro utilizando herramientas como Jira, Confluence, Bitbucket y
             Bamboo, lo que permite una gestión de proyectos organizada y
@@ -154,7 +154,7 @@ export const Experiences = () => {
             de soluciones web innovadoras para clientes de alto perfil. Durante
             este período, llevamos a cabo proyectos desde cero para reconocidas
             marcas como <strong>McDonald&apos;s</strong> y
-            <strong>Editorial Santillana</strong>, adaptándonos a las
+            <strong> Editorial Santillana</strong>, adaptándonos a las
             necesidades del mercado local e internacional.
           </p>
           <p>
@@ -162,8 +162,8 @@ export const Experiences = () => {
             destacando proyectos basados en <strong>WordPress</strong> y
             aplicaciones web personalizadas. Mi trabajo se centró en la
             implementación de tecnologías clave de la época, como
-            <strong>PHP</strong>, <strong>JavaScript</strong>,
-            <strong>HTML</strong> y <strong>CSS</strong>, que me permitieron
+            <strong> PHP</strong>, <strong>JavaScript</strong>,
+            <strong> HTML</strong> y <strong>CSS</strong>, que me permitieron
             ofrecer soluciones robustas, dinámicas y escalables.
           </p>
           <p>

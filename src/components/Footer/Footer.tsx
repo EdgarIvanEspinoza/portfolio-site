@@ -5,6 +5,9 @@ export const Footer = () => {
       <a href="https://www.linkedin.com/in/edgarespinoza/" target="_blank">
         LinkedIn
       </a>
+      <a href="https://github.com/EdgarIvanEspinoza" target="_blank">
+        Github
+      </a>
       <a href="mailto:edgarivanespinoza@gmail.com">
         edgarivanespinoza@gmail.com
       </a>
