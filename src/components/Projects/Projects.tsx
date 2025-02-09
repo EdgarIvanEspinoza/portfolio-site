@@ -11,8 +11,10 @@ export const Projects = () => {
         className="w-full h-[300px] col-span-12 sm:col-span-5"
       >
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">New</p>
-          <h4 className="text-white font-medium text-2xl">Wedding site</h4>
+          <p className="text-tiny text-white/60 uppercase font-bold">Nueva</p>
+          <h4 className="text-white font-medium text-2xl">
+            Página web de Boda
+          </h4>
         </CardHeader>
         <Image
           removeWrapper
@@ -65,7 +67,7 @@ export const Projects = () => {
       <Card className="col-span-12 sm:col-span-4 h-[300px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="text-tiny text-white/60 uppercase font-bold">
-            It feels alive
+            Inteligencia Artificial
           </p>
           <h4 className="text-white font-medium text-large">Aeternus AI</h4>
         </CardHeader>
@@ -81,20 +83,25 @@ export const Projects = () => {
       </Card>
       <Card className="col-span-12 sm:col-span-4 h-[300px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">
-            Web Games
+          <p className="text-tiny text-black/80 uppercase font-bold">
+            Art & Design
           </p>
-          <h4 className="text-white font-medium text-large">Puzzle Element</h4>
+          <h4 className="text-black font-medium text-large">PixelHitos</h4>
         </CardHeader>
         <Image
           removeWrapper
           alt="Card background"
           className="z-0 w-full h-full object-cover opacity-20 cursos-wait transform hover:scale-110"
-          src="/assets/puzzle-tba.png"
+          src="/assets/pixelhitos.png"
+          onClick={() => {
+            window.open('https://www.pixelhitos.com/', '_blank');
+          }}
         />
         <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
           <div>
-            <p className="text-white/80 text-small">Available soon.</p>
+            <p className="text-black/80 font-medium text-small">
+              Compra arte en Madrid
+            </p>
           </div>
         </CardFooter>
       </Card>

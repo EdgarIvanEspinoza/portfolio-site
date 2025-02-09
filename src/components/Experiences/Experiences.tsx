@@ -2,6 +2,18 @@ import { useState } from 'react';
 import { Accordion, AccordionItem, Card, User } from '@heroui/react';
 
 import type { Selection } from '@heroui/react';
+import {
+  HTML5,
+  CSS,
+  JavaScript,
+  TypeScript,
+  React as ReactIcon,
+  GraphQL,
+  PandaCSS,
+  PostHog,
+  Nextjs,
+  StyledComponents,
+} from '../icons';
 
 export const Experiences = () => {
   const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set(['1']));
@@ -33,22 +45,46 @@ export const Experiences = () => {
           }
         >
           <p>
-            Desarrollo de Aplicaciones Web: Creación y mantenimiento de
-            plataformas escalables con React, Next.js, TypeScript y Panda CSS.
-            Migración de sistemas heredados a arquitecturas modernas.
-            Optimización de Rendimiento: Implementación de SSR, ISR, caching y
-            lazy loading para mejorar velocidad y experiencia de usuario.
-            Resolución de problemas como FOUC y optimización del renderizado.
-            Integración con APIs y Componentización: Desarrollo de librerías de
-            componentes reutilizables y arquitectura modular en monorepos.
-            Conexión eficiente con APIs REST y GraphQL. Compatibilidad y
-            Accesibilidad: Diseño adaptable a múltiples dispositivos y
-            navegadores. Uso de herramientas como Storybook para mejorar la
-            documentación y reutilización de componentes. Liderazgo Técnico y
-            Colaboración: Trabajo estrecho con equipos de diseño y backend,
-            asegurando implementación fiel a UX/UI y optimización del flujo de
-            trabajo en entornos ágiles.
+            Actualmente formo parte del equipo de Facephi como
+            <strong>Senior Frontend Developer</strong>, donde me encargo del
+            desarrollo y mantenimiento de aplicaciones web escalables utilizando
+            tecnologías de vanguardia como
+            <strong>React</strong>, <strong>Next.js</strong>,
+            <strong>TypeScript</strong> y <strong>Panda CSS</strong>.
           </p>
+          <p>
+            Mi trabajo consiste en colaborar en la migración de sistemas
+            heredados hacia arquitecturas modernas, implementando soluciones que
+            optimizan el rendimiento mediante técnicas como
+            <em>Server-Side Rendering (SSR)</em>,
+            <em>Incremental Static Regeneration (ISR)</em>, caching y lazy
+            loading. Esto ha permitido mejorar significativamente la velocidad y
+            la experiencia del usuario en nuestras plataformas.
+          </p>
+          <p>
+            Además, participo en la integración de APIs a través de
+            <strong>REST</strong> y <strong>GraphQL</strong>, y en el desarrollo
+            de librerías de componentes reutilizables, adoptando un enfoque
+            modular en entornos monorepo.
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              gap: 12,
+              padding: 12,
+            }}
+          >
+            <HTML5 />
+            <CSS />
+            <JavaScript />
+            <TypeScript />
+            <ReactIcon />
+            <GraphQL />
+            <Nextjs />
+            <PandaCSS />
+            <PostHog />
+          </div>
         </AccordionItem>
         <AccordionItem
           key="2"
@@ -63,35 +99,42 @@ export const Experiences = () => {
           }
         >
           <p>
-            I&apos;m a passionate front-end developer with experience in
-            developing web applications using React. My focus is on creating
-            highly responsive and high-quality user interfaces. During my time
-            on the Zinia Web Team, I&apos;ve worked with a variety of advanced
-            technologies and tools to efficiently and effectively deliver
-            projects. 𝗞𝗲𝘆 𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝗶𝗲𝘀 𝗮𝗻𝗱 𝗠𝗲𝘁𝗵𝗼𝗱𝗼𝗹𝗼𝗴𝗶𝗲𝘀 -𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝗶𝗲𝘀: React,
-            Redux, JavaScript/TypeScript, Jest for unit testing, Flow, HTML,
-            CSS, and JavaScript ES6+. -𝗔𝗱𝗱𝗶𝘁𝗶𝗼𝗻𝗮𝗹 𝗟𝗶𝗯𝗿𝗮𝗿𝗶𝗲𝘀 𝗮𝗻𝗱 𝗧𝗼𝗼𝗹𝘀: Styled
-            Components for style management and Storybook for efficient
-            component development and documentation. -𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗺𝗲𝗻𝘁 𝗠𝗲𝘁𝗵𝗼𝗱𝗼𝗹𝗼𝗴𝘆: I
-            follow the Agile Scrum methodology for effective project management,
-            utilizing tools such as Jira, Confluence, Bitbucket, and Bamboo, all
-            part of the Atlassian Project Management Software ecosystem.
-            I&apos;m a passionate front-end developer with experience in
-            developing web applications using React. My focus is on creating
-            highly responsive and high-quality user interfaces. During my time
-            on the Zinia Web Team, I&apos;ve worked with a variety of advanced
-            technologies and tools to efficiently and effectively deliver
-            projects. 𝗞𝗲𝘆 𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝗶𝗲𝘀 𝗮𝗻𝗱 𝗠𝗲𝘁𝗵𝗼𝗱𝗼𝗹𝗼𝗴𝗶𝗲𝘀 -𝗧𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝗶𝗲𝘀: React,
-            Redux, JavaScript/TypeScript, Jest for unit testing, Flow, HTML,
-            CSS, and JavaScript ES6+. -𝗔𝗱𝗱𝗶𝘁𝗶𝗼𝗻𝗮𝗹 𝗟𝗶𝗯𝗿𝗮𝗿𝗶𝗲𝘀 𝗮𝗻𝗱 𝗧𝗼𝗼𝗹𝘀: Styled
-            Components for style management and Storybook for efficient
-            component development and documentation. -𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗺𝗲𝗻𝘁 𝗠𝗲𝘁𝗵𝗼𝗱𝗼𝗹𝗼𝗴𝘆: I
-            follow the Agile Scrum methodology for effective project management,
-            utilizing tools such as Jira, Confluence, Bitbucket, and Bamboo, all
-            part of the Atlassian Project Management Software ecosystem.
-            Aptitudes: Leadership · React · TypeScript · Jest · JavaScript · CSS
-            · Communication
+            Durante mi tiempo en el equipo web de Zinia, he trabajado con una
+            variedad de tecnologías y herramientas avanzadas, lo que me ha
+            permitido entregar proyectos de forma eficiente y efectiva.
           </p>
+          <p>
+            He trabajado con una amplia gama de tecnologías y herramientas
+            avanzadas que me han permitido entregar proyectos de forma eficaz.
+            Entre ellas se destacan <strong>Redux</strong>,
+            JavaScript/TypeScript, <strong>Jest</strong> para pruebas unitarias,
+            HTML, CSS y JavaScript ES6+, que aseguran un desarrollo robusto y
+            escalable.
+          </p>
+          <p>
+            Adicionalmente, he integrado herramientas complementarias como
+            <strong>Styled Components</strong> para la gestión de estilos y
+            <strong>Storybook</strong> para el desarrollo y documentación
+            eficiente de componentes. Siguiendo la metodología Agile Scrum,
+            colaboro utilizando herramientas como Jira, Confluence, Bitbucket y
+            Bamboo, lo que permite una gestión de proyectos organizada y
+            colaborativa.
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              gap: 12,
+              padding: 12,
+            }}
+          >
+            <HTML5 />
+            <CSS />
+            <JavaScript />
+            <TypeScript />
+            <ReactIcon />
+            <StyledComponents />
+          </div>
         </AccordionItem>
         <AccordionItem
           key="3"
@@ -106,17 +149,49 @@ export const Experiences = () => {
           }
         >
           <p>
-            I developed various websites, including projects from scratch for
-            clients like 𝗠𝗰𝗗𝗼𝗻𝗮𝗹𝗱&apos;𝘀 𝗮𝗻𝗱 𝗘𝗱𝗶𝘁𝗼𝗿𝗶𝗮𝗹 𝗦𝗮𝗻𝘁𝗶𝗹𝗹𝗮𝗻𝗮. I also worked
-            on 𝗪𝗼𝗿𝗱𝗣𝗿𝗲𝘀𝘀-𝗯𝗮𝘀𝗲𝗱 𝗽𝗿𝗼𝗷𝗲𝗰𝘁𝘀. During my time at Royalmedia, I gained
-            experience in web development using 𝗣𝗛𝗣, 𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁, 𝗛𝗧𝗠𝗟, 𝗮𝗻𝗱 𝗖𝗦𝗦.
-            I developed various websites, including projects from scratch for
-            clients like 𝗠𝗰𝗗𝗼𝗻𝗮𝗹𝗱&apos;𝘀 𝗮𝗻𝗱 𝗘𝗱𝗶𝘁𝗼𝗿𝗶𝗮𝗹 𝗦𝗮𝗻𝘁𝗶𝗹𝗹𝗮𝗻𝗮. I also worked
-            on 𝗪𝗼𝗿𝗱𝗣𝗿𝗲𝘀𝘀-𝗯𝗮𝘀𝗲𝗱 𝗽𝗿𝗼𝗷𝗲𝗰𝘁𝘀. During my time at Royalmedia, I gained
-            experience in web development using 𝗣𝗛𝗣, 𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁, 𝗛𝗧𝗠𝗟, 𝗮𝗻𝗱 𝗖𝗦𝗦.
-            Aptitudes: Gestión de equipos de proyectos · HTML · WordPress · PHP
-            · Hojas de estilos en cascada (CSS) · JavaScript · Communication
+            Entre 2012 y 2019, fundé y dirigí <strong>Royalmedia</strong>, mi
+            propia agencia digital en Venezuela, especializada en el desarrollo
+            de soluciones web innovadoras para clientes de alto perfil. Durante
+            este período, llevamos a cabo proyectos desde cero para reconocidas
+            marcas como <strong>McDonald&apos;s</strong> y
+            <strong>Editorial Santillana</strong>, adaptándonos a las
+            necesidades del mercado local e internacional.
           </p>
+          <p>
+            En Royalmedia desarrollé una amplia variedad de sitios web,
+            destacando proyectos basados en <strong>WordPress</strong> y
+            aplicaciones web personalizadas. Mi trabajo se centró en la
+            implementación de tecnologías clave de la época, como
+            <strong>PHP</strong>, <strong>JavaScript</strong>,
+            <strong>HTML</strong> y <strong>CSS</strong>, que me permitieron
+            ofrecer soluciones robustas, dinámicas y escalables.
+          </p>
+          <p>
+            Además de la parte técnica, mi rol implicó la gestión y coordinación
+            de equipos de proyectos, garantizando la entrega oportuna y de alta
+            calidad de cada iniciativa. Esta experiencia me permitió consolidar
+            habilidades en liderazgo, comunicación y manejo de proyectos en un
+            entorno altamente competitivo.
+          </p>
+          <p>
+            Mi paso por Royalmedia no solo fortaleció mis competencias técnicas,
+            sino que también me dotó de una visión integral del proceso de
+            desarrollo web, desde la concepción de la idea hasta la entrega
+            final del producto. Estoy listo para aportar esta experiencia y
+            pasión por la innovación en nuevos desafíos.
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              gap: 12,
+              padding: 12,
+            }}
+          >
+            <HTML5 />
+            <CSS />
+            <JavaScript />
+          </div>
         </AccordionItem>
       </Accordion>
     </Card>
