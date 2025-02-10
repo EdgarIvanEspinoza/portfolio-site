@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const Header = () => {
   return (
     <Navbar>
-      <NavbarContent className="hidden sm:flex gap-4 m-auto" justify="center">
+      <NavbarContent className="sm:flex gap-4 m-auto" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#hero">
             Sobre mí
