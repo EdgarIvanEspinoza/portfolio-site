@@ -21,7 +21,7 @@ export const Experiences = () => {
   return (
     <Card
       isFooterBlurred
-      className="border-none max-w-5xl m-auto px-32 py-16 mt-10 mb-10"
+      className="border-none max-w-5xl m-auto sm:px-32 px-8 py-16 mb:my-10 lg:mx-auto mx-8 my-5"
       radius="lg"
       id="experiences"
     >
