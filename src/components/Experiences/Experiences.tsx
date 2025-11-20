@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Image } from "@heroui/react";
 
 const experiences = [
   {
     id: "01",
     role: "Senior Software Developer",
     company: "NATIVE INSTRUMENTS",
+    logo: "/assets/native-instruments.webp",
     period: "AUG 2024 - PRESENT",
     location: "REMOTE - BERLIN, GERMANY",
     description:
@@ -17,6 +19,7 @@ const experiences = [
     id: "02",
     role: "Senior Frontend Engineer",
     company: "FACEPHI",
+    logo: "/assets/facephi_logo.jpg",
     period: "JUN 2024 - AUG 2024",
     location: "REMOTE - ALICANTE, SPAIN",
     description:
@@ -27,6 +30,7 @@ const experiences = [
     id: "03",
     role: "Frontend Engineer & Team Leadership",
     company: "OPENBANK (ZINIA WEB TEAM)",
+    logo: "/assets/openbank_logo.jpg",
     period: "AUG 2022 - JUN 2024",
     location: "MADRID, SPAIN",
     description:
@@ -37,6 +41,7 @@ const experiences = [
     id: "04",
     role: "Co-Founder & Technical Manager",
     company: "ROYAL MEDIA VENEZUELA",
+    logo: "/assets/royalmedia_logo.jpg",
     period: "ENE 2014 - SEP 2021",
     location: "CARACAS, VENEZUELA",
     description:
@@ -47,6 +52,7 @@ const experiences = [
     id: "05",
     role: "Co-Founder & Technical Project Manager",
     company: "EN EL TROPYCO",
+    logo: "/assets/eneltropyco.jpg",
     period: "FEB 2018 - FEB 2021",
     location: "CARACAS, VENEZUELA",
     description:
@@ -57,6 +63,7 @@ const experiences = [
     id: "06",
     role: "General Manager",
     company: "EDGARSOUND SONIDO PROFESIONAL",
+    logo: "/assets/edgarsound.png",
     period: "2009 - 2018",
     location: "CARACAS, VENEZUELA",
     description:
@@ -98,11 +105,30 @@ export const Experiences = () => {
 
             <div className="glass-panel p-6 md:p-8 rounded-none border-l-2 border-l-tech-cyan hover:bg-white/5 transition-colors">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-1">
-                    {exp.company}
-                  </h3>
-                  <p className="text-tech-blue font-mono text-sm">{exp.role}</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rflex items-center justify-center overflow-hidden">
+                    {exp.logo ? (
+                      <Image src={exp.logo} alt={exp.company} removeWrapper />
+                    ) : (
+                      <div
+                        className={`w-12 h-12 flex items-center justify-center bg-gradient-to-br from-tech-blue to-tech-purple text-white font-bold`}
+                      >
+                        {exp.company
+                          .split(" ")
+                          .map((w) => w[0])
+                          .slice(0, 2)
+                          .join("")}
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-1">
+                      {exp.company}
+                    </h3>
+                    <p className="text-tech-blue font-mono text-sm">
+                      {exp.role}
+                    </p>
+                  </div>
                 </div>
                 <div className="text-right">
                   <div className="text-white font-bold tracking-wide">
