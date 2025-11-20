@@ -1,3 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background: #030712;
+  --foreground: #f8fafc;
+  
+  /* Futuristic Palette */
+  --tech-blue: #3b82f6;
+  --tech-cyan: #06b6d4;
+  --tech-purple: #8b5cf6;
+  --deep-space: #020617;
+  --holo-white: #e2e8f0;
+  
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(2, 6, 23, 0.7);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Subtle Data Grid */
+.data-grid {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--tech-blue), var(--tech-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tech-border {
+  position: relative;
+}
+
+.tech-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--tech-cyan), transparent);
+  opacity: 0.5;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

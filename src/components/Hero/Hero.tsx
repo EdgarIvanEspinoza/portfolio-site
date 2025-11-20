@@ -1,49 +1,70 @@
-import { Avatar, Button, Card } from '@heroui/react';
+"use client";
+
+import { motion } from "framer-motion";
+import { Button } from "@heroui/react";
 
 export const Hero = () => {
   return (
-    <Card
-      className="border-none max-w-5xl m-auto sm:px-32 px-10 py-16 mb:my-10 lg:mx-auto mx-8 my-5"
-      radius="lg"
-    >
-      <div className="flex flex-col lg:flex-row items-center justify-center sm:p-10 sm:gap-5">
-        <Avatar className="w-20 h-20 text-large" src="/assets/profile.jpg" />
-        <div className="flex flex-col items-start justify-center px-10 py-3 gap-5">
-          <h1 className="text-xl font-bold text-center text-gray-900 dark:text-gray-100">
-            ¡Hola! Soy Edgar Iván Espinoza
+    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center relative overflow-hidden pt-20 bg-deep-space">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-transparent z-10" />
+        <div className="absolute inset-0 data-grid opacity-30" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-tech-blue/20 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tech-purple/20 rounded-full blur-[100px] animate-pulse delay-1000" />
+      </div>
+
+      <div className="z-20 flex flex-col items-center text-center max-w-4xl px-6 gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-6xl lg:text-8xl font-black text-white mb-6 tracking-tight">
+            IVAN <span className="text-gradient">ESPINOZA</span>
           </h1>
-          <div className="flex lg:flex-row flex-col gap-5 max-lg:align-center w-full">
+
+          <h2 className="text-2xl lg:text-3xl text-gray-200 font-light mb-2 tracking-wide">
+            SENIOR SOFTWARE ENGINEER
+          </h2>
+          <h5 className="text-lg lg:text-xl text-gray-400 font-light mb-8    tracking-wide">
+            SPECIALIZING IN PRODUCT-DRIVEN DIGITAL EXPERIENCES
+          </h5>
+
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+            Building and shipping customer-facing digital products — from
+            discovery and prototyping to scaling and measurement. Focusing on
+            product outcomes, user value, and cross-functional delivery. <br />
+            Architecting high-performance digital experiences with
+            <span className="text-tech-blue font-bold"> React</span>,
+            <span className="text-tech-blue font-bold"> Electron</span>, and
+            <span className="text-tech-blue font-bold"> Next.js</span>.
+            Specializing in scalable cross-platform applications and team
+            leadership.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
             <Button
-              color="primary"
-              onPress={() => {
+              className="bg-tech-blue text-white font-bold tracking-wider px-8 py-6 rounded-none border border-tech-blue hover:bg-transparent hover:text-tech-blue transition-all"
+              onPress={() =>
                 window.open(
-                  'https://www.linkedin.com/in/edgarivanespinoza/',
-                  '_blank'
-                );
-              }}
+                  "https://www.linkedin.com/in/edgar-ivan-espinoza-3b3b3b1b/",
+                  "_blank"
+                )
+              }
             >
-              Encuentrame en <b>LinkedIn</b>
+              LINKEDIN_PROFILE
             </Button>
             <Button
-              color="default"
-              variant="bordered"
-              onPress={() => {
-                window.open('https://github.com/EdgarIvanEspinoza', '_blank');
-              }}
+              className="bg-transparent text-white font-bold tracking-wider px-8 py-6 rounded-none border border-white/20 hover:border-tech-cyan hover:text-tech-cyan transition-all"
+              onPress={() =>
+                window.open("https://github.com/edgarivanespinoza", "_blank")
+              }
             >
-              Estoy en <b>Github</b>
+              GITHUB_
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <h2>
-        <b>Frontend Engineer</b> especializado en el desarrollo de productos
-        digitales. Desde Madrid, creando experiencias web escalables con React,
-        Next.js, TypeScript y microfrontends.
-        <br />
-        Apasionado por la performance, el diseño de sistemas y la tecnología. 🚀
-      </h2>
-      <div id="projects" />
-    </Card>
+    </div>
   );
 };

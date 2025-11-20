@@ -1,199 +1,137 @@
-import { useState } from 'react';
-import { Accordion, AccordionItem, Card, User } from '@heroui/react';
+"use client";
 
-import type { Selection } from '@heroui/react';
-import {
-  HTML5,
-  CSS,
-  JavaScript,
-  TypeScript,
-  React as ReactIcon,
-  GraphQL,
-  PandaCSS,
-  PostHog,
-  Nextjs,
-  StyledComponents,
-} from '../icons';
+import { motion } from "framer-motion";
+
+const experiences = [
+  {
+    id: "01",
+    role: "Senior Software Developer",
+    company: "NATIVE INSTRUMENTS",
+    period: "AUG 2024 - PRESENT",
+    location: "REMOTE - BERLIN, GERMANY",
+    description:
+      "Developing Native Access application with React and Electron. Building scalable UI components and features for product discovery, installation, and management in cross-functional Agile team.",
+    stack: ["Electron", "React", "TypeScript", "Redux", "GraphQL"],
+  },
+  {
+    id: "02",
+    role: "Senior Frontend Engineer",
+    company: "FACEPHI",
+    period: "JUN 2024 - AUG 2024",
+    location: "REMOTE - ALICANTE, SPAIN",
+    description:
+      "Developed the KYB (Know Your Business) module, focusing on immediate adaptability to regulatory changes. Implemented Feature Flags and enhanced performance of key React components.",
+    stack: ["React", "Next.js", "TypeScript", "GraphQL", "Styled Components"],
+  },
+  {
+    id: "03",
+    role: "Frontend Engineer & Team Leadership",
+    company: "OPENBANK (ZINIA WEB TEAM)",
+    period: "AUG 2022 - JUN 2024",
+    location: "MADRID, SPAIN",
+    description:
+      "Led team of front-end developers building high-quality, responsive user interfaces. Integrated RESTful APIs and microservices on AWS. Developed internal tools including OTP consultant extension.",
+    stack: ["React", "TypeScript", "Styled Components", "REST APIs", "AWS"],
+  },
+  {
+    id: "04",
+    role: "Co-Founder & Technical Manager",
+    company: "ROYAL MEDIA VENEZUELA",
+    period: "ENE 2014 - SEP 2021",
+    location: "CARACAS, VENEZUELA",
+    description:
+      "Co-founded and managed web development agency. Led development teams creating tailored applications for high-profile clients including McDonald's Venezuela and Editorial Santillana.",
+    stack: ["PHP", "WordPress", "JavaScript", "Unity", "C#", "Blender"],
+  },
+  {
+    id: "05",
+    role: "Co-Founder & Technical Project Manager",
+    company: "EN EL TROPYCO",
+    period: "FEB 2018 - FEB 2021",
+    location: "CARACAS, VENEZUELA",
+    description:
+      "Managed multidisciplinary team developing digital marketing strategies and technological solutions for event management and advertising campaigns.",
+    stack: ["Project Management", "Team Leadership", "Digital Strategy"],
+  },
+  {
+    id: "06",
+    role: "General Manager",
+    company: "EDGARSOUND SONIDO PROFESIONAL",
+    period: "2009 - 2018",
+    location: "CARACAS, VENEZUELA",
+    description:
+      "Led company to become nationally recognized leader in professional sound industry. Managed operations, technical service, equipment maintenance, and strategic planning.",
+    stack: [
+      "Operations Management",
+      "Technical Team Management",
+      "Strategic Planning",
+    ],
+  },
+];
 
 export const Experiences = () => {
-  const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set(['1']));
-
   return (
-    <Card
-      isFooterBlurred
-      className="border-none max-w-5xl m-auto sm:px-32 px-8 py-16 mb:my-10 lg:mx-auto mx-8 my-5"
-      radius="lg"
-      id="experiences"
-    >
-      <h1 className="text-xl font-bold text-center text-gray-900 dark:text-gray-100">
-        Experiencia
-      </h1>
-      <Accordion
-        selectedKeys={selectedKeys}
-        onSelectionChange={setSelectedKeys}
-      >
-        <AccordionItem
-          key="1"
-          title={
-            <User
-              avatarProps={{
-                src: '/assets/facephi_logo.jpg',
-              }}
-              description="Senior Frontend Engineer"
-              name="Facephi"
-            />
-          }
-        >
-          <p>
-            Actualmente formo parte del equipo de Facephi como
-            <strong> Senior Frontend Developer</strong>, donde me encargo del
-            desarrollo y mantenimiento de aplicaciones web escalables utilizando
-            tecnologías de vanguardia como
-            <strong> React</strong>, <strong>Next.js</strong>,
-            <strong> TypeScript</strong> y <strong>Panda CSS</strong>.
-          </p>
-          <p>
-            Mi trabajo consiste en colaborar en la migración de sistemas
-            heredados hacia arquitecturas modernas, implementando soluciones que
-            optimizan el rendimiento mediante técnicas como
-            <em> Server-Side Rendering (SSR)</em>,
-            <em> Incremental Static Regeneration (ISR)</em>, caching y lazy
-            loading. Esto ha permitido mejorar significativamente la velocidad y
-            la experiencia del usuario en nuestras plataformas.
-          </p>
-          <p>
-            Además, participo en la integración de APIs a través de
-            <strong> REST</strong> y <strong>GraphQL</strong>, y en el
-            desarrollo de librerías de componentes reutilizables, adoptando un
-            enfoque modular en entornos monorepo.
-          </p>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'flex-start',
-              gap: 12,
-              padding: 12,
-            }}
+    <div className="max-w-4xl mx-auto px-6 py-24" id="experiences">
+      <div className="flex items-end justify-between mb-16">
+        <div>
+          <h2 className="text-tech-purple font-mono text-sm tracking-widest mb-2">
+            CAREER HISTORY
+          </h2>
+          <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+            PROFESSIONAL <span className="text-gradient">JOURNEY</span>
+          </h1>
+        </div>
+      </div>
+
+      <div className="relative border-l border-white/10 ml-4 md:ml-8 space-y-12">
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={exp.id}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="relative pl-8 md:pl-12"
           >
-            <HTML5 />
-            <CSS />
-            <JavaScript />
-            <TypeScript />
-            <ReactIcon />
-            <GraphQL />
-            <Nextjs />
-            <PandaCSS />
-            <PostHog />
-          </div>
-        </AccordionItem>
-        <AccordionItem
-          key="2"
-          title={
-            <User
-              avatarProps={{
-                src: '/assets/openbank_logo.jpg',
-              }}
-              description="Frontend Engineer"
-              name="Openbank by Santander"
-            />
-          }
-        >
-          <p>
-            Durante mi tiempo en el equipo web de Zinia, he trabajado con una
-            variedad de tecnologías y herramientas avanzadas, lo que me ha
-            permitido entregar proyectos de forma eficiente y efectiva.
-          </p>
-          <p>
-            He trabajado con una amplia gama de tecnologías y herramientas
-            avanzadas que me han permitido entregar proyectos de forma eficaz.
-            Entre ellas se destacan <strong>Redux</strong>,
-            JavaScript/TypeScript, <strong>Jest</strong> para pruebas unitarias,
-            HTML, CSS y JavaScript ES6+, que aseguran un desarrollo robusto y
-            escalable.
-          </p>
-          <p>
-            Adicionalmente, he integrado herramientas complementarias como
-            <strong> Styled Components</strong> para la gestión de estilos y
-            <strong> Storybook</strong> para el desarrollo y documentación
-            eficiente de componentes. Siguiendo la metodología Agile Scrum,
-            colaboro utilizando herramientas como Jira, Confluence, Bitbucket y
-            Bamboo, lo que permite una gestión de proyectos organizada y
-            colaborativa.
-          </p>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'flex-start',
-              gap: 12,
-              padding: 12,
-            }}
-          >
-            <HTML5 />
-            <CSS />
-            <JavaScript />
-            <TypeScript />
-            <ReactIcon />
-            <StyledComponents />
-          </div>
-        </AccordionItem>
-        <AccordionItem
-          key="3"
-          title={
-            <User
-              avatarProps={{
-                src: '/assets/royalmedia_logo.jpg',
-              }}
-              description="Software Engineer"
-              name="Royal Media"
-            />
-          }
-        >
-          <p>
-            Entre 2012 y 2019, fundé y dirigí <strong>Royalmedia</strong>, mi
-            propia agencia digital en Venezuela, especializada en el desarrollo
-            de soluciones web innovadoras para clientes de alto perfil. Durante
-            este período, llevamos a cabo proyectos desde cero para reconocidas
-            marcas como <strong>McDonald&apos;s</strong> y
-            <strong> Editorial Santillana</strong>, adaptándonos a las
-            necesidades del mercado local e internacional.
-          </p>
-          <p>
-            En Royalmedia desarrollé una amplia variedad de sitios web,
-            destacando proyectos basados en <strong>WordPress</strong> y
-            aplicaciones web personalizadas. Mi trabajo se centró en la
-            implementación de tecnologías clave de la época, como
-            <strong> PHP</strong>, <strong>JavaScript</strong>,
-            <strong> HTML</strong> y <strong>CSS</strong>, que me permitieron
-            ofrecer soluciones robustas, dinámicas y escalables.
-          </p>
-          <p>
-            Además de la parte técnica, mi rol implicó la gestión y coordinación
-            de equipos de proyectos, garantizando la entrega oportuna y de alta
-            calidad de cada iniciativa. Esta experiencia me permitió consolidar
-            habilidades en liderazgo, comunicación y manejo de proyectos en un
-            entorno altamente competitivo.
-          </p>
-          <p>
-            Mi paso por Royalmedia no solo fortaleció mis competencias técnicas,
-            sino que también me dotó de una visión integral del proceso de
-            desarrollo web, desde la concepción de la idea hasta la entrega
-            final del producto. Estoy listo para aportar esta experiencia y
-            pasión por la innovación en nuevos desafíos.
-          </p>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'flex-start',
-              gap: 12,
-              padding: 12,
-            }}
-          >
-            <HTML5 />
-            <CSS />
-            <JavaScript />
-          </div>
-        </AccordionItem>
-      </Accordion>
-    </Card>
+            {/* Timeline Dot */}
+            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-tech-blue box-shadow-lg shadow-tech-blue/50" />
+
+            <div className="glass-panel p-6 md:p-8 rounded-none border-l-2 border-l-tech-cyan hover:bg-white/5 transition-colors">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-1">
+                    {exp.company}
+                  </h3>
+                  <p className="text-tech-blue font-mono text-sm">{exp.role}</p>
+                </div>
+                <div className="text-right">
+                  <div className="text-white font-bold tracking-wide">
+                    {exp.period}
+                  </div>
+                  <div className="text-gray-500 text-xs font-mono mt-1">
+                    {exp.location}
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                {exp.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {exp.stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 bg-deep-space rounded-full text-xs text-gray-300 border border-white/10"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
   );
 };
