@@ -5,143 +5,107 @@ import { Button } from "@heroui/react";
 
 export const Hero = () => {
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center relative overflow-hidden pt-20 bg-deep-space">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-deep-space to-transparent z-0" />
-
-        <svg
-          className="absolute inset-0 w-full h-full z-0"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="gridDots"
-              width="48"
-              height="48"
-              patternUnits="userSpaceOnUse"
-            >
-              <rect
-                x="0"
-                y="0"
-                width="2"
-                height="2"
-                fill="rgba(255,255,255, 0.2)"
-              />
-            </pattern>
-          </defs>
-
-          <rect width="100%" height="100%" fill="url(#gridDots)">
-            <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="translate"
-              values="0 0; 0 -12; 0 0; 0 12; 0 0"
-              dur="8s"
-              repeatCount="indefinite"
-            />
-          </rect>
-          <rect width="100%" height="100%" fill="url(#gridDots)" opacity="0.18">
-            <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="translate"
-              values="0 0; 0 10; 0 0; 0 -10; 0 0"
-              dur="7s"
-              repeatCount="indefinite"
-            />
-          </rect>
-        </svg>
-
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-tech-blue/50 z-10"
-          style={{ filter: "blur(60px)" }}
-          animate={{
-            y: [0, -100, 0, 100, 0],
-            x: [0, 50, 0, -50, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center relative overflow-hidden pt-20 bg-transparent">
+      {/* Background Graphic Elements */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Large red angled block in background */}
+        <motion.div 
+          initial={{ x: "-100%" }}
+          animate={{ x: "-10%" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="absolute top-0 left-0 w-full h-[150%] bg-p5-red clip-slanted origin-top-left -rotate-12 scale-150"
         />
-
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-tech-purple/50 z-10"
-          style={{ filter: "blur(60px)" }}
-          animate={{
-            y: [0, 80, 0, -80, 0],
-            x: [0, -40, 0, 40, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+        {/* Dark overlay on the right to avoid white-on-white */}
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="absolute top-1/4 right-0 w-[80%] h-[60%] bg-p5-black clip-jagged"
         />
       </div>
 
-      <div className="z-20 flex flex-col items-center text-center max-w-4xl px-6 gap-8">
+      <div className="z-20 flex flex-col items-center lg:items-start text-center lg:text-left max-w-5xl px-6 gap-6 relative">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 50, rotate: 5 }}
+          animate={{ opacity: 1, y: 0, rotate: -2 }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.6 }}
+          className="relative inline-block"
         >
-          <h1 className="text-6xl lg:text-8xl font-black text-white mb-6 tracking-tight">
-            IVAN{" "}
-            <motion.span
-              className="text-gradient inline-block"
-              initial={{ y: -6, scale: 0.98 }}
-              animate={{ y: 0, scale: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ y: -4, scale: 1.02 }}
-            >
-              ESPINOZA
-            </motion.span>
-          </h1>
+          {/* Black shadow behind text */}
+          <div className="absolute top-2 left-2 w-full h-full bg-p5-black clip-slanted translate-x-2 translate-y-2 z-[-1]" />
+          <div className="bg-p5-yellow px-8 py-4 clip-slanted border-4 border-p5-black">
+            <h1 className="text-6xl lg:text-9xl font-anton text-p5-black tracking-tight leading-none uppercase">
+              IVAN <br />
+              <motion.span
+                className="text-p5-black inline-block mt-2 border-l-8 border-p5-red pl-2"
+                whileHover={{ scale: 1.05, rotate: 2 }}
+              >
+                ESPINOZA
+              </motion.span>
+            </h1>
+          </div>
+        </motion.div>
 
-          <h2 className="text-2xl lg:text-3xl text-gray-200 font-light mb-2 tracking-wide">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="bg-p5-black inline-block px-4 py-2 clip-slanted-reverse -rotate-2"
+        >
+          <h2 className="text-2xl lg:text-4xl text-p5-white font-anton tracking-widest uppercase">
             SENIOR SOFTWARE ENGINEER
           </h2>
-          <h5 className="text-lg lg:text-xl text-gray-400 font-light mb-8    tracking-wide">
-            SPECIALIZING IN PRODUCT-DRIVEN DIGITAL EXPERIENCES
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="bg-p5-red inline-block px-4 py-2 clip-slanted rotate-1"
+        >
+          <h5 className="text-xl lg:text-2xl text-p5-black font-anton tracking-widest uppercase">
+            SPECIALIZING IN PRODUCT-DRIVEN EXPERIENCES
           </h5>
+        </motion.div>
 
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="bg-p5-white p-6 border-4 border-p5-black clip-slanted-reverse max-w-2xl mt-4 relative rotate-1 hover:-rotate-1 transition-transform"
+        >
+          <p className="text-p5-black text-lg lg:text-xl font-bold leading-relaxed">
             Building and shipping customer-facing digital products — from
-            discovery and prototyping to scaling and measurement. Focusing on
-            product outcomes, user value, and cross-functional delivery. <br />
+            discovery and prototyping to scaling and measurement. <br /><br />
             Architecting high-performance digital experiences with
-            <span className="text-tech-blue font-bold"> React</span>,
-            <span className="text-tech-blue font-bold"> Electron</span>, and
-            <span className="text-tech-blue font-bold"> Next.js</span>.
-            Specializing in scalable cross-platform applications and team
-            leadership.
+            <span className="text-p5-red font-black text-2xl uppercase mx-1 bg-p5-yellow px-1 clip-slanted inline-block transform -rotate-2"> React</span>,
+            <span className="text-p5-red font-black text-2xl uppercase mx-1 bg-p5-yellow px-1 clip-slanted inline-block transform rotate-2"> Electron</span>, and
+            <span className="text-p5-red font-black text-2xl uppercase mx-1 bg-p5-yellow px-1 clip-slanted inline-block transform -rotate-1"> Next.js</span>.
           </p>
+        </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button
-              className="bg-tech-blue text-white font-bold tracking-wider px-8 py-6 rounded-none border border-tech-blue hover:bg-transparent hover:text-tech-blue transition-all"
-              onPress={() =>
-                window.open(
-                  "https://www.linkedin.com/in/edgar-ivan-espinoza-3b3b3b1b/",
-                  "_blank"
-                )
-              }
-            >
-              LINKEDIN_PROFILE
-            </Button>
-            <Button
-              className="bg-transparent text-white font-bold tracking-wider px-8 py-6 rounded-none border border-white/20 hover:border-tech-cyan hover:text-tech-cyan transition-all"
-              onPress={() =>
-                window.open("https://github.com/edgarivanespinoza", "_blank")
-              }
-            >
-              GITHUB_
-            </Button>
-          </div>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="flex flex-wrap justify-center lg:justify-start gap-6 mt-6"
+        >
+          <Button
+            className="bg-p5-red text-p5-white font-anton text-xl tracking-widest px-10 py-8 border-4 border-p5-black clip-button hover:bg-p5-yellow hover:text-p5-black transform transition-all group"
+            onPress={() => window.open("https://www.linkedin.com/in/edgar-ivan-espinoza-3b3b3b1b/", "_blank")}
+          >
+            <span className="group-hover:scale-110 transition-transform inline-block inline-flex items-center gap-2">
+              LINKEDIN <span className="text-2xl">★</span>
+            </span>
+          </Button>
+          <Button
+            className="bg-p5-black text-p5-white font-anton text-xl tracking-widest px-10 py-8 border-4 border-p5-black clip-button hover:bg-p5-yellow hover:text-p5-black transform transition-all group"
+            onPress={() => window.open("https://github.com/edgarivanespinoza", "_blank")}
+          >
+            <span className="group-hover:scale-110 transition-transform inline-block inline-flex items-center gap-2">
+              GITHUB <span className="text-2xl">★</span>
+            </span>
+          </Button>
         </motion.div>
       </div>
     </div>

@@ -11,26 +11,30 @@ export default {
     './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'p5-red': '#e60012',
+        'p5-black': '#111111',
+        'p5-white': '#f5f5f5',
+        'p5-yellow': '#ffe600',
+      },
+      fontFamily: {
+        anton: ['var(--font-anton)', 'sans-serif'],
+        inter: ['var(--font-inter)', 'sans-serif'],
+      },
+    },
   },
   darkMode: 'class',
   plugins: [
     heroui({
-      prefix: 'heroui', // prefix for themes variables
-      addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
-      defaultTheme: 'light', // default theme from the themes object
-      defaultExtendTheme: 'light', // default theme to extend on custom themes
-      layout: {}, // common layout tokens (applied to all themes)
+      prefix: 'heroui',
+      addCommonColors: false,
+      defaultTheme: 'light',
+      defaultExtendTheme: 'light',
+      layout: {},
       themes: {
-        light: {
-          layout: {}, // light theme layout tokens
-          colors: {}, // light theme colors
-        },
-        dark: {
-          layout: {}, // dark theme layout tokens
-          colors: {}, // dark theme colors
-        },
-        // ... custom themes
+        light: { layout: {}, colors: {} },
+        dark: { layout: {}, colors: {} },
       },
     }),
   ],

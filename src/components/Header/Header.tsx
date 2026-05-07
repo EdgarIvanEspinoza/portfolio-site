@@ -14,14 +14,14 @@ export const Header = () => {
   return (
     <Navbar
       maxWidth="xl"
-      className="bg-deep-space/80 backdrop-blur-md border-b border-white/5 h-20 fixed top-0 z-50"
-      isBordered
+      className="bg-p5-black border-b-[4px] border-p5-red h-20 fixed top-0 z-50 shadow-[0_4px_0_0_rgba(230,0,18,1)]"
+      isBordered={false}
     >
       <NavbarBrand>
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-8 bg-tech-blue" />
+        <div className="flex items-center gap-2 group cursor-pointer hover-shake">
+          <div className="w-4 h-8 bg-p5-red clip-slanted scale-110 group-hover:bg-p5-yellow transition-colors" />
           <div className="flex flex-col">
-            <p className="font-black text-white tracking-tighter text-xl leading-none">
+            <p className="font-anton text-p5-white text-3xl tracking-wide leading-none group-hover:text-p5-yellow transition-colors">
               IVAN ESPINOZA
             </p>
           </div>
@@ -33,10 +33,10 @@ export const Header = () => {
           <NavbarItem key={item.name}>
             <Link
               href={item.href}
-              className="text-sm font-mono text-gray-400 hover:text-tech-cyan transition-colors tracking-wider relative group"
+              className="text-lg font-anton text-p5-white hover:text-p5-yellow hover:scale-110 hover:-rotate-3 transition-all tracking-wider relative group"
             >
               {item.name}
-              <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-tech-cyan group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-1 left-0 w-full h-[4px] bg-p5-yellow scale-x-0 group-hover:scale-x-100 transition-transform duration-100 origin-left" />
             </Link>
           </NavbarItem>
         ))}

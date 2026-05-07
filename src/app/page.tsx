@@ -11,7 +11,7 @@ import { Skills } from "@/components/Skills/Skills";
 export default function Home() {
   return (
     <div
-      className=" bg-gradient-to-r from-secondary-200 to-primary-100"
+      className="bg-p5-black min-h-screen halftone-bg overflow-hidden relative"
       id="hero"
     >
       <Header />

@@ -3,84 +3,96 @@
 @tailwind utilities;
 
 :root {
-  --background: #030712;
-  --foreground: #f8fafc;
-
-  /* Futuristic Palette */
-  --tech-blue: #3b82f6;
-  --tech-cyan: #06b6d4;
-  --tech-purple: #8b5cf6;
-  --deep-space: #020617;
-  --holo-white: #e2e8f0;
-
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(2, 6, 23, 0.7);
+  --background: #111111; /* p5-black */
+  --foreground: #f5f5f5; /* p5-white */
+  --p5-red: #e60012;
+  --p5-black: #111111;
+  --p5-white: #f5f5f5;
+  --p5-yellow: #ffe600;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
-/* Subtle Data Grid */
-.data-grid {
-  background-size: 50px 50px;
-  background-image: linear-gradient(
-      to right,
-      rgba(59, 130, 246, 0.05) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
-  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+/* Halftone Background Pattern */
+.halftone-bg {
+  background-color: var(--p5-black);
+  background-image: radial-gradient(var(--p5-red) 15%, transparent 16%),
+    radial-gradient(var(--p5-red) 15%, transparent 16%);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
 }
 
-/* Glassmorphism Utilities */
-.glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+.halftone-bg-white {
+  background-color: var(--p5-white);
+  background-image: radial-gradient(#d4d4d4 15%, transparent 16%),
+    radial-gradient(#d4d4d4 15%, transparent 16%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--tech-blue), var(--tech-cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Jagged Edges / Polygon Clips */
+.clip-slanted {
+  clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 95%);
 }
 
-.tech-border {
-  position: relative;
+.clip-slanted-reverse {
+  clip-path: polygon(5% 0, 95% 5%, 100% 100%, 0 95%);
 }
 
-.tech-border::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--tech-cyan),
-    transparent
-  );
-  opacity: 0.5;
+.clip-jagged {
+  clip-path: polygon(1% 1%, 98% 3%, 100% 98%, 2% 95%);
+}
+
+.clip-button {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.clip-button:hover {
+  transform: scale(1.05) rotate(-2deg);
+  background-color: var(--p5-yellow);
+  color: var(--p5-black);
+  clip-path: polygon(0 0, 100% 10%, 90% 100%, 10% 90%);
 }
 
 /* Animations */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.hover-shake:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+/* Text styles */
+.text-outline {
+  text-shadow: 
+    -2px -2px 0 var(--p5-black),  
+     2px -2px 0 var(--p5-black),
+    -2px  2px 0 var(--p5-black),
+     2px  2px 0 var(--p5-black);
+}
+
+.text-outline-white {
+  text-shadow: 
+    -2px -2px 0 var(--p5-white),  
+     2px -2px 0 var(--p5-white),
+    -2px  2px 0 var(--p5-white),
+     2px  2px 0 var(--p5-white);
 }

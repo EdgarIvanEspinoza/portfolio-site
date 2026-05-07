@@ -78,69 +78,75 @@ const experiences = [
 
 export const Experiences = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-24" id="experiences">
-      <div className="flex items-end justify-between mb-16">
-        <div>
-          <h2 className="text-tech-purple font-mono text-sm tracking-widest mb-2">
+    <div className="max-w-4xl mx-auto px-6 py-24 relative" id="experiences">
+      <div className="flex flex-col items-start mb-16 relative z-10">
+        <motion.div
+           initial={{ opacity: 0, scale: 0.8 }}
+           whileInView={{ opacity: 1, scale: 1 }}
+           viewport={{ once: true }}
+           className="bg-p5-red px-4 py-1 clip-slanted mb-2 transform -rotate-1"
+        >
+          <h2 className="text-p5-white font-anton text-xl tracking-widest uppercase">
             CAREER HISTORY
           </h2>
-          <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight">
-            PROFESSIONAL <span className="text-gradient">JOURNEY</span>
-          </h1>
-        </div>
+        </motion.div>
+        
+        <h1 className="text-5xl md:text-7xl font-anton text-p5-white tracking-widest uppercase text-outline">
+          PROFESSIONAL <span className="text-p5-red">JOURNEY</span>
+        </h1>
       </div>
 
-      <div className="relative border-l border-white/10 ml-4 md:ml-8 space-y-12">
+      <div className="relative border-l-8 border-p5-red ml-4 md:ml-8 space-y-12 pb-12">
         {experiences.map((exp, index) => (
           <motion.div
             key={exp.id}
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="relative pl-8 md:pl-12"
+            transition={{ delay: 0.1, type: "spring" }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="relative pl-8 md:pl-12 group hover:z-20"
           >
             {/* Timeline Dot */}
-            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-tech-blue box-shadow-lg shadow-tech-blue/50" />
+            <div className="absolute -left-[20px] top-4 w-8 h-8 clip-jagged bg-p5-yellow border-4 border-p5-black group-hover:scale-150 transition-transform flex items-center justify-center">
+              <div className="w-2 h-2 bg-p5-black rounded-full" />
+            </div>
 
-            <div className="glass-panel p-6 md:p-8 rounded-none border-l-2 border-l-tech-cyan hover:bg-white/5 transition-colors">
+            {/* Shadow Base layer */}
+            <div className="absolute top-0 right-0 bottom-0 left-8 md:left-12 bg-p5-black clip-slanted translate-x-3 translate-y-3 z-[-1] transition-transform group-hover:translate-x-4 group-hover:translate-y-4" />
+
+            <div className="bg-p5-white p-6 md:p-8 border-4 border-p5-black clip-slanted hover:-rotate-1 transition-transform">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rflex items-center justify-center overflow-hidden">
+                  <div className="w-16 h-16 flex items-center justify-center overflow-hidden border-4 border-p5-black clip-slanted-reverse bg-p5-yellow">
                     {exp.logo ? (
-                      <Image src={exp.logo} alt={exp.company} removeWrapper />
+                      <Image src={exp.logo} alt={exp.company} className="w-full h-full object-cover" removeWrapper />
                     ) : (
-                      <div
-                        className={`w-12 h-12 flex items-center justify-center bg-gradient-to-br from-tech-blue to-tech-purple text-white font-bold`}
-                      >
-                        {exp.company
-                          .split(" ")
-                          .map((w) => w[0])
-                          .slice(0, 2)
-                          .join("")}
+                      <div className="w-full h-full flex items-center justify-center bg-p5-red text-p5-white font-anton text-2xl">
+                        {exp.company.split(" ").map((w) => w[0]).slice(0, 2).join("")}
                       </div>
                     )}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">
+                    <h3 className="text-2xl lg:text-3xl font-anton text-p5-black uppercase tracking-wider mb-1">
                       {exp.company}
                     </h3>
-                    <p className="text-tech-blue font-mono text-sm">
+                    <p className="text-p5-white bg-p5-black inline-block px-2 py-1 clip-slanted font-bold text-sm tracking-widest uppercase">
                       {exp.role}
                     </p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-white font-bold tracking-wide">
+                
+                <div className="text-right md:text-center shrink-0">
+                  <div className="text-p5-white bg-p5-red px-3 py-1 font-anton tracking-widest text-lg clip-slanted-reverse shadow-[2px_2px_0_0_rgba(17,17,17,1)] inline-block transform rotate-2">
                     {exp.period}
                   </div>
-                  <div className="text-gray-500 text-xs font-mono mt-1">
+                  <div className="text-p5-black font-bold text-sm mt-2 tracking-wide uppercase">
                     {exp.location}
                   </div>
                 </div>
               </div>
 
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-p5-black font-bold text-lg mb-6 leading-relaxed">
                 {exp.description}
               </p>
 
@@ -148,7 +154,7 @@ export const Experiences = () => {
                 {exp.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-deep-space rounded-full text-xs text-gray-300 border border-white/10"
+                    className="px-3 py-1 bg-p5-yellow border-2 border-p5-black text-xs font-anton tracking-wider text-p5-black text-center clip-button"
                   >
                     {tech}
                   </span>
